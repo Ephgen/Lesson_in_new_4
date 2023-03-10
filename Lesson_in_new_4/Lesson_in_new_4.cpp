@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <windows.h>
 #include "Book.h"
+#include "FileBook.h"
 
 using namespace std;
 
@@ -33,9 +34,14 @@ int main()
 	Book* books = new Book[5]{b, b1,b2, b3, b4};
 
 	int size = 5;
-	books->ShowAutorBook(cout,"автор 1", size);
+	/*books->ShowAutorBook(cout,"автор 1", size);
 
 	books->ShowPublisherBook(cout, "издатель 2", size);
 
-	books->ShowYearBook(cout,2007, size);
+	books->ShowYearBook(cout,2007, size);*/
+	FileBook fb{(char*)"text.txt"};
+
+	//fb.SaveBookFile(books,5);
+	Book* books2 = fb.LoadBookFile();
+	books2->ShowYearBook(cout, 2000, size);
 }

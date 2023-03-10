@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "FileBook.h"
 
 using namespace std;
 
@@ -25,8 +26,7 @@ class Book
 	char* _publisher;
 	int _year;
 	int _pages;
-
-
+	friend class FileBook;
 
 public:               // Обязательно конструктор публичный
 	Book(const char* a, const char* n, char* p, int y, int page) :
@@ -63,5 +63,6 @@ public:               // Обязательно конструктор публичный
 		}
 		return in;
 	}
+
 };
 
